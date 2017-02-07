@@ -5,6 +5,7 @@ package com.geiko.carParts;
  */
 public class Engine {
     protected int engineCapacity;
+    protected boolean engineOn = false;
 
     public Engine(int engineCapacity) {
         this.engineCapacity = engineCapacity;
@@ -16,6 +17,14 @@ public class Engine {
 
     public void setEngineCapacity(int engineCapacity) {
         this.engineCapacity = engineCapacity;
+    }
+
+    public boolean isEngineOn() {
+        return engineOn;
+    }
+
+    public void setEngineOn(boolean engineOn) {
+        this.engineOn = engineOn;
     }
 
     @Override

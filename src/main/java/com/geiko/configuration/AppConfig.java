@@ -1,5 +1,6 @@
 package com.geiko.configuration;
 
+import com.geiko.aspects.LoggingAspect;
 import com.geiko.carParts.*;
 import com.geiko.cars.Car;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +11,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 /**
  * Created by Андрей on 07.02.2017.
  */
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = {"com.geiko.*"})
 @Configuration
 public class AppConfig {
     @Bean
@@ -40,5 +43,10 @@ public class AppConfig {
     @Bean
     public Car car(){
         return new Car(engine(),wheel());
+    }
+
+    @Bean
+    public LoggingAspect loggingAspect(){
+        return new LoggingAspect();
     }
 }
