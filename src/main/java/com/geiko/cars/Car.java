@@ -9,6 +9,7 @@ import com.geiko.carParts.Wheel;
 public class Car {
     protected Engine engine;
     protected Wheel wheel;
+    protected boolean isDoorOpen = false;
 
     public Car(Engine engine, Wheel wheel) {
         this.engine = engine;
@@ -23,6 +24,14 @@ public class Car {
         return wheel;
     }
 
+    public void startCar(){
+        engine.setEngineOn(true);
+    }
+
+    public void stopCar(){
+        engine.setEngineOn(false);
+    }
+
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
@@ -31,8 +40,20 @@ public class Car {
         this.wheel = wheel;
     }
 
+    public boolean isDoorOpen() {
+        return isDoorOpen;
+    }
+
+    public void openDoor() {
+        isDoorOpen = true;
+    }
+
+    public void closeDoor() {
+        isDoorOpen = true;
+    }
+
     @Override
     public String toString(){
-        return "Car:\n "+wheel+engine;
+        return "Car:\n "+getWheel()+getEngine();
     }
 }
