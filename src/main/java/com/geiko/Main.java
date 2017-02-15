@@ -12,10 +12,5 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         Car car = (Car) context.getBean("car");
-        car.startCar();
-        car.openDoor();
-        car.stopCar();
-        car.openDoor();
-        car.closeDoor();
     }
 }
